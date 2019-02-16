@@ -5,6 +5,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const pool = require('../database');
 const helpers = require('../lib/helpers');
+const axios = require('axios');
 
 // passport para el 'signin'
 passport.use('local.signin', new LocalStrategy({
@@ -38,13 +39,19 @@ passport.use('local.signup', new LocalStrategy({
     passReqToCallback: true
 }, async (req, email, clave, done) => {
     const { fullname, tel, dir, ciudad, cod_postal } = req.body;
+
+    // para buscar el codigo del municipio en el .json 
+    const response = await axios.get('https://www.datos.gov.co/resource/xdk5-pm3f.json');
+    const data = await response.data;
+    const depFilter = data.filter(info => info.municipio === ciudad);
+    const cod_mun = depFilter[0]["c_digo_dane_del_municipio"];
     const newUser = {
         email,
         clave,
         nombre_completo: fullname,
         telefono: tel,
         direccion: dir,
-        cod_municipio: ciudad,
+        cod_municipio: cod_mun,
         cod_postal
     };
     newUser.clave = await helpers.encryptPassword(clave);
