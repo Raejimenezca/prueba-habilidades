@@ -43,7 +43,7 @@ router.post('/prods', isLoggedIn, async (req, res) => {
 
 // async, consulta asincrona para devolver todos los pedidos con su respectiva informacion
 router.get('/', isLoggedIn, async (req, res) =>{
-    console.log(req.user.id);
+    //console.log(req.user.id);
     const pedidos = await pool.query('SELECT * FROM (info_pedido INNER JOIN pedido ON info_pedido.id_pedido = pedido.id_ped) INNER JOIN producto ON info_pedido.id_producto = producto.nom_producto WHERE pedido.id_usuario = ?', [req.user.id]);
     //const totales = pool.query('SELECT id_pedido, SUM(valor * cantidad) AS sum FROM (info_pedido INNER JOIN pedido ON info_pedido.id_pedido = pedido.id_ped) INNER JOIN producto ON info_pedido.id_producto = producto.nom_producto WHERE pedido.id_usuario = ? GROUP BY id_pedido', [req.user.id]);
     // renderizar la vista de los pedidos
