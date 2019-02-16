@@ -1,0 +1,31 @@
+{{!-- para mostrar todos los pedidos --}}
+
+<div class="container p-4">
+    <div class="row">
+            {{!-- totals, muestra los datos que va recorriendo --}}
+            {{#each pedidos}}
+            <div class="col-md-3">
+                <div class="card text-center m-2">
+                    <div class="card-body m-2">
+                        <p class="m-2">
+                               Pedido # {{id_pedido}}                        
+                        </p>
+                        <p class="m-2">
+                            {{id_producto}}  
+                        </p>
+                        <p class="m-2">{{fecha}}</p> 
+                        <p class="m-2">{{hora}}</p>
+                        <p class="m-2"></p>
+                    </div>
+                </div>
+            </div>
+            {{!-- en caso de que no haya un valor al recorrer el bucle --}} 
+            {{else}}
+                <div class="col-md-4 mx-auto">
+                    <div class="card card-body text-center">
+                        <p>No hay pedidos guardados aún</p>
+                    </div>
+                </div>
+            {{/each}}
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{{!-- formulario de registro --}}
+
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3>SignUp</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/signup" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="fullname" placeholder="Nombre completo" class="form-control" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="email" placeholder="Ingresar correo" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="password" placeholder="Contraseña" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="tel" placeholder="Telefono" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="dir" placeholder="Direccion" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ciudad" placeholder="Ciudad" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="cod_postal" placeholder="Codigo postal" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                SignUp
+                            </button>
+                        </div>
+                    </form>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

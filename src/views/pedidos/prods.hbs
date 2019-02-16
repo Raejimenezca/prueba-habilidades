@@ -1,0 +1,17 @@
+<!-- Archivo 'handlebar' para listar los productos -->
+
+<div class="container p-4">
+    <div class="card text-center">
+        <div class="card-body">
+            <p class="m-2">
+                    <h3>Productos disponibles</h3>                    
+            </p>
+            <p class="m-2">
+                {{#each productos}}
+                    {{nom_producto}} : $ {{valor}}
+                    <br>
+                {{/each}}   
+            </p>
+        </div>
+    </div>
+</div>
