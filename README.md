@@ -15,5 +15,5 @@
 
 1. Al registrar un usuario la contraseña es encriptada, por tanto cuando los 'inserts' a la base de datos se hacen desde script SQL las contraseñas nunca van a hacer match, los usuarios DEBEN ser registrados desde el formulario de registro para que la encriptación y recuperación de los datos se haga correctamente.
 
-2. La ciudad se inserta tal cual como se llama pero en la base de datos se guarda por su codo de municipio segun el dane.
+2. La ciudad se inserta tal cual como se llama pero en la base de datos se guarda por su código de municipio según el dane.
 
